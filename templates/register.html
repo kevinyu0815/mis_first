@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body{
+				background-color: linen;
+				text-align: center;
+				font-family: 微軟正黑體;
+			}
+
+			input{
+				margin: 5px;
+			}
+
+			.title{
+				padding: 10px;
+				color: grey;
+				background-color: #F4CFD7
+			}
+
+			.content{
+				color: white;
+				background-color: #8097C6
+			}
+		</style>
+
+		<meta charset="utf-8">
+
+		<title>
+			註冊頁面
+		</title>
+	</head>
+
+
+	<body>
+		<div class="title">
+			<h1>註冊頁面</h1>
+		</div>
+
+		<div class="content">
+			<form action = "/register/" method="post" autocomplete="on">
+			{% csrf_token %}
+			<fieldset><br>
+			姓名：<input id="name" name="name" type="text" required placeholder="請輸入姓名" ><br>
+			信箱：<input id ="email" name="email" type="text" required placeholder="填入信箱"><br>
+			密碼：<input id = "password" name="password" type="password" required placeholder="輸入您的密碼"><br>
+			生日：<input type="date" id = "birthday" name="birthday" max="1997-12-31"><br>
+			<input type="hidden" name="ok" value="yes">
+			性別：<input id = "gender" name="gender" value="male" type="radio" checked>男
+			<input id = "gender" name="gender" value="female" type="radio">女<br>
+
+			<input type="submit" value="進行註冊">
+			</fieldset>
+			</form>
+		</div><br>
+
+		<button type="button" onclick="location.href='/login/'">登入</button>
+	</body>
+</html>
